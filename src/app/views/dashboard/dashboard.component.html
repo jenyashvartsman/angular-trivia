@@ -1,28 +1,35 @@
 <div class="dashboard-wrapper">
   <app-title title="Trivia"></app-title>
 
-  <div class="card mb-10">
-    <h1>Title</h1>
-    <h3>Sub Title</h3>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
-      eligendi corporis soluta vel nam fugiat libero tempora doloremque quidem
-      quasi pariatur quis, suscipit voluptatem labore! Earum consequatur
-      reprehenderit magnam nihil?
-    </p>
-  </div>
-
-  <div class="card mb-10">
-    <button class="btn btn-primary mr-10">Primary</button>
-    <button class="btn btn-secondary mr-10">Secondary</button>
-    <button class="btn btn-success mr-10">Success</button>
-    <button class="btn btn-danger mr-10">Danger</button>
-  </div>
-
   <div class="card">
-    <button class="btn btn-outline-primary mr-10">Primary</button>
-    <button class="btn btn-outline-secondary mr-10">Secondary</button>
-    <button class="btn btn-outline-success mr-10">Success outline</button>
-    <button class="btn btn-outline-danger mr-10">Danger outline</button>
+    <app-select-button
+      label="Difficulty"
+      [options]="difficultyOptions"
+      [(selected)]="difficultySelected"
+    ></app-select-button>
+
+    <app-select-button
+      label="Type"
+      [options]="answerTypeOptions"
+      [(selected)]="answerTypeSelected"
+    ></app-select-button>
+
+    <app-select-button
+      label="Number of questions"
+      [options]="questionsCountOptions"
+      [(selected)]="questionsCountSelected"
+    ></app-select-button>
+
+    <button
+      class="btn btn-primary w-100 mt-30"
+      routerLink="questions"
+      [queryParams]="{
+        difficulty: difficultySelected,
+        questions: questionsCountSelected,
+        type: answerTypeSelected
+      }"
+    >
+      Start
+    </button>
   </div>
 </div>

@@ -1,0 +1,21 @@
+.select-button-wrapper {
+  margin-bottom: 20px;
+
+  > label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    button {
+      flex-grow: 1;
+      transition: background-color 300ms ease, color 300ms ease;
+      text-transform: capitalize;
+    }
+  }
+}

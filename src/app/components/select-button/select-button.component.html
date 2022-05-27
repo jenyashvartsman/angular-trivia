@@ -1,0 +1,13 @@
+<div class="select-button-wrapper">
+  <label>{{ label }}</label>
+  <div>
+    <button
+      *ngFor="let option of options"
+      class="btn"
+      [ngClass]="selected === option ? 'btn-success' : 'btn-outline-secondary'"
+      (click)="onSelectedChange(option)"
+    >
+      {{ option }}
+    </button>
+  </div>
+</div>
