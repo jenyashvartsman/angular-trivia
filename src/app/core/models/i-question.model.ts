@@ -11,6 +11,9 @@ export interface IQuestionModel {
   question: string;
   difficulty: EDifficultyType;
   correct_answer: string;
-  incorrect_answer: string[];
+  incorrect_answers: string[];
   type: EAnswerType;
+
+  // combinded answers
+  answers?: string[];
 }

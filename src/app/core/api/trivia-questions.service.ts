@@ -18,12 +18,12 @@ export class TriviaQuestionsService {
     difficulty: EDifficultyType,
     answers: EAnswerType,
     questionsCount: EQuestionsCountType
-  ): Observable<IQuestionsWrapper[]> {
+  ): Observable<IQuestionsWrapper> {
     const params = {
       amount: questionsCount,
       difficulty: difficulty,
       type: answers,
     };
-    return this.http.get<IQuestionsWrapper[]>(this.apiUrl, { params });
+    return this.http.get<IQuestionsWrapper>(this.apiUrl, { params });
   }
 }

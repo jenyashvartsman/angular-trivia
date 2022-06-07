@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { QuestionsComponent } from './questions.component';
 import { Route, RouterModule } from '@angular/router';
 import { TitleModule } from 'src/app/components/title/title.module';
+import { QuestionCardModule } from 'src/app/components/question-card/question-card.module';
 
 const routes: Route[] = [
   {
@@ -13,6 +14,11 @@ const routes: Route[] = [
 
 @NgModule({
   declarations: [QuestionsComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), TitleModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    TitleModule,
+    QuestionCardModule,
+  ],
 })
 export class QuestionsModule {}

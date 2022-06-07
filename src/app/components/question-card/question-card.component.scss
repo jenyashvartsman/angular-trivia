@@ -1,0 +1,14 @@
+@import "/src/assets/style/vars.scss";
+
+.question-card-wrapper {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid $text-secondary-color;
+  border-radius: 8px;
+  padding: 36px;
+
+  button:not(:last-child):disabled {
+    opacity: 1;
+  }
+}

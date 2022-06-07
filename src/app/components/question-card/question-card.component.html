@@ -1,0 +1,24 @@
+<div *ngIf="_question" class="question-card-wrapper">
+  <h3>{{ _question.category }}</h3>
+  <p class="mb-30" [innerHtml]="_question.question"></p>
+
+  <button
+    *ngFor="let answer of _question.answers"
+    class="btn btn-secondary w-100 mb-10"
+    [innerHTML]="answer"
+    (click)="userAnswerClick(answer)"
+    [class.btn-success]="!!userAnswer && _question.correct_answer === answer"
+    [class.btn-danger]="
+      userAnswer !== _question.correct_answer && userAnswer === answer
+    "
+    [disabled]="!!userAnswer"
+  ></button>
+
+  <button
+    [disabled]="userAnswer === null"
+    class="btn btn-primary w-100 mt-30"
+    (click)="nextQuestionClick.emit()"
+  >
+    Next
+  </button>
+</div>
